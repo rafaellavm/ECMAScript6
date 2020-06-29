@@ -1,0 +1,43 @@
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width-device-width, initial-scale = 1, shrink-to-fit=no" />
+  <title>6 - Introdução a arrow function</title>
+</head>
+<body>
+</body>
+</html>
+
+<script type="text/javascript">
+
+const Brasil =  ["Rio de Janeiro", "São Paulo", "Minas Gerais"];
+
+
+//o map cria um novo array 
+const amor = Brasil.map(function(name){
+    return `Eu amo ${name}!`;
+});
+
+//usando arrow function:
+
+const amorComArrow1 = Brasil.map((name) => {
+    return `Eu amo ${name}!`;
+});
+
+const amorComArrow2 = Brasil.map(name => {
+    return `Eu amo ${name}!`;
+});
+
+//se o arrow function for somente de 1 linha:
+const amorComArrow3 = Brasil.map(name => `Eu amo ${name}!`);
+
+//concatenando funcoes
+const amorComArrow4 = Brasil.filter(name => name === "Rio de Janeiro").map(name => `Eu amo ${name}`);
+
+console.log(amor);
+console.log(amorComArrow1);
+console.log(amorComArrow2);
+console.log(amorComArrow3);
+console.log(amorComArrow4);
+
+</script>

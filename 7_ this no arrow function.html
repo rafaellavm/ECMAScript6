@@ -1,0 +1,52 @@
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width-device-width, initial-scale = 1, shrink-to-fit=no" />
+  <title>7 - This no arrow function</title>
+</head>
+<body>
+    <button id="btn">Clique aqui</button>
+</body>
+</html>
+
+<script type="text/javascript">
+
+
+const sanduiche = {
+    pao: 'branco',
+    queijo: 'cheddar',
+
+    preparo: function(){
+        return `Eu quero um sanduíche com pão ${this.pao} e ${this.queijo}`
+    },
+    fazer: function(){
+        var aquele = this;
+        window.setTimeout(function(){
+            console.log(aquele.preparo());
+        }, 500);
+    },
+    fazer2: function(){
+        window.setTimeout(() => {
+            console.log(this.preparo());
+        }, 500);
+    }
+}
+
+const btn = document.getElementById('btn');
+btn.addEventListener('click',function(){
+    sanduiche.fazer();
+    sanduiche.fazer2();
+    console.log(this);
+
+});
+
+//o this no arrow function é diferente, retorna um window
+btn.addEventListener('click', () =>{
+
+console.log(this);
+
+});
+
+//console.log(amorComArrow4);
+
+</script>
